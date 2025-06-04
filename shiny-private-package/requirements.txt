@@ -1,0 +1,15 @@
+shiny>=0.6.0
+
+# For your private package from the 'private-package' repository, use one of these:
+
+# If you've manually cloned the repo and want to install in development mode:
+# -e /path/to/private-package
+
+# Using SSH (if you've set up SSH keys):
+git+ssh://git@github.com/scubasteveqa/private-package.git
+
+# Using HTTPS with personal access token (for private repos):
+# git+https://${GITHUB_TOKEN}@github.com/yourusername/private-package.git
+
+# If you've published to PyPI, you would use:
+# tiny-private-utils==0.1.0
