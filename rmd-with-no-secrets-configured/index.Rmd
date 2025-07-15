@@ -1,0 +1,52 @@
+---
+title: "Secrets using Public RNA PG Database with Posit Pro Drivers"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+library(DBI)
+library(odbc)
+library(dplyr)
+```
+
+```{r, echo=FALSE}
+# Retrieve environment variables directly
+driver <- Sys.getenv('DB_DRIVER')
+database <- Sys.getenv('DB_DATABASE')
+uid <- Sys.getenv('DB_UID')
+pwd <- Sys.getenv('DB_PWD')
+server <- Sys.getenv('DB_SERVER')
+port <- Sys.getenv('DB_PORT')
+```
+
+```{r, echo=FALSE}
+# Create the connection string for DBI
+connection_string <- paste0("Driver={", driver, "};",
+                            "Database=", database, ";",
+                            "Uid=", uid, ";",
+                            "Pwd=", pwd, ";",
+                            "Server=", server, ";",
+                            "Port=", port, ";")
+```
+
+```{r, echo=FALSE}
+# Connect to PostgreSQL database using DBI and odbc
+con <- dbConnect(odbc::odbc(), .connection_string = connection_string)
+```
+
+```{r, echo=FALSE}
+# Retrieve a table from the database
+query <- "SELECT * FROM auth_permission"
+df <- dbGetQuery(con, query)
+```
+
+```{r, echo=FALSE}
+# Display the DataFrame
+print(df)
+```
+
+```{r, echo=FALSE}
+# Close the connection
+dbDisconnect(con)
+```
+
