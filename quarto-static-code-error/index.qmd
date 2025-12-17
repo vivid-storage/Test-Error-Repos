@@ -1,0 +1,17 @@
+---
+title: "\033[34mDemo of ANSI Colors in Metadata\033[0m"
+format: html
+jupyter: python3
+---
+
+# Demonstrating ANSI Colors in Metadata
+
+## ANSI Colors in Metadata
+
+Although ANSI colors can't be rendered directly in metadata, here's how you might include ANSI color codes in metadata fields as plain text:
+
+```plaintext
+Title: \033[34m"Demo of ANSI Colors in Metadata"\033[0m
+Format: \033[32m"html"\033[0m
+Jupyter: \033[33m"python3"\033[0m
+```

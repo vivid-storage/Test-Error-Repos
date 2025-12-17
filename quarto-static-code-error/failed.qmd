@@ -1,0 +1,32 @@
+---
+title:  "\033[34mDemo of ANSI Colors in Metadata\033[0m"
+format: html
+jupyter: python3
+---
+
+# Introduction
+
+This document is designed to fail to render and demonstrate ANSI colors in the rendering logs.
+
+## Python Code with ANSI Colors
+
+The following Python code includes ANSI colors for logging purposes. It intentionally contains an error to ensure the document fails to render.
+
+```{python}
+import colorama
+from colorama import Fore, Style
+
+colorama.init()
+
+def log_with_colors():
+    print(Fore.RED + "This is an error message in red." + Style.RESET_ALL)
+    print(Fore.GREEN + "This is a success message in green." + Style.RESET_ALL)
+    print(Fore.YELLOW + "This is a warning message in yellow." + Style.RESET_ALL)
+    print(Fore.BLUE + "This is an info message in blue." + Style.RESET_ALL)
+
+# Intentionally cause a syntax error
+def cause_syntax_error()
+    print("This will cause a syntax error")
+
+log_with_colors()
+```
