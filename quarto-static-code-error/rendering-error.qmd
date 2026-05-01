@@ -1,0 +1,8 @@
+  `
+  ---                                                                                                                                                                                                    
+  title: "Test Rendering Error"
+  format: html                                                                                                                                                                                           
+  jupyter: python3
+  ---                                                                                                                                                                                                    
+                             
+  raise RuntimeError("intentional rendering failure")
